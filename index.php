@@ -1,3 +1,9 @@
+<?php
+
+require_once './main.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +12,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div>
+    </div>
     
 </body>
 </html>
