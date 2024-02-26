@@ -14,7 +14,17 @@ require_once './main.php';
 <body>
 
     <div>
-        
+        <ul>
+            <?php foreach($hotels as $hotel): ?>
+
+                <li><?=$hotel['name']?></li>
+                <li><?=$hotel['description']?></li>
+                <li><?=$hotel['parking']?></li>
+                <li><?=$hotel['vote']?></li>
+                <li><?=$hotel['distance_to_center']?></li>
+
+            <?php endforeach; ?>
+        </ul>
     </div>
     
 </body>
