@@ -17,7 +17,26 @@ require_once './main.php';
 
 <body>
 
-    <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="d-flex flex-column justify-content-center align-items-center vh-100">
+
+        <form method="GET">
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="parking-filter" name="parking-filter"
+                    <?= $parking_filter ? 'checked' : '' ?>>
+                <label class="form-check-label" for="parking-filter">
+                    Con Parcheggio
+                </label>
+            </div>
+
+            <input type="number" class="form-control" value='<?= $vote_filter ?>' min="1" max="5" id="vote-filter" name='vote-filter'>
+
+            <button class='btn btn-primary'>
+                cerca
+            </button>
+
+        </form>
+
         <table class="table w-50 border text-center align-middle">
             <thead>
                 <tr class="align-middle">
@@ -31,11 +50,21 @@ require_once './main.php';
             <tbody>
                 <?php foreach ($hotels as $hotel): ?>
                     <tr>
-                        <th scope="row"><?= $hotel['name'] ?></th>
-                        <td><?= $hotel['description'] ?></td>
-                        <td><?= $hotel['parking'] ?></td>
-                        <td><?= $hotel['vote'] ?></td>
-                        <td><?= $hotel['distance_to_center'] ?></td>
+                        <th scope="row">
+                            <?= $hotel['name'] ?>
+                        </th>
+                        <td>
+                            <?= $hotel['description'] ?>
+                        </td>
+                        <td>
+                            <?= $hotel['parking'] ? 'si' : 'no' ?>
+                        </td>
+                        <td>
+                            <?= $hotel['vote'] ?>
+                        </td>
+                        <td>
+                            <?= $hotel['distance_to_center'] ?>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

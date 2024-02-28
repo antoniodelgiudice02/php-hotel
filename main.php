@@ -40,6 +40,38 @@ $hotels = [
 
 ];
 
+$parking_filter = isset($_GET['parking-filter']) ? true : false;
+var_dump($parking_filter);
+
+if ($parking_filter) {
+
+    $hotels = array_filter($hotels, fn($hotel) => $hotel['parking']);
+
+}
+
+$vote_filter = $_GET['vote-filter'];
+var_dump($vote_filter);
+
+if (!empty($vote_filter)) {
+
+    $hotels = array_filter($hotels, fn($hotel) => $hotel['vote'] >= $vote_filter);
+    
+}
+
+
+
+
+
+
+// if (f) { //se si cerca un hotel col parcheggio
+
+
+// }
+
+
+
+
+
 // $parking = '';
 
 // foreach ($hotels as $hotel) {
